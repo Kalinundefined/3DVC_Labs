@@ -1,0 +1,13 @@
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - python=3.9
+  - pip
+  - numpy # to be compatible with pytorch
+  - scipy
+  - pip:
+      - tqdm
+      - trimesh
+      - torch
+      - jax
