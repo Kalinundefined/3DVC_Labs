@@ -2,12 +2,12 @@ channels:
   - defaults
   - conda-forge
 dependencies:
-  - python=3.9
+  - python=3.10
   - pip
-  - numpy # to be compatible with pytorch
+  - numpy
   - scipy
+  - jax
   - pip:
       - tqdm
       - trimesh
-      - torch
-      - jax
+      - scikit-learn
