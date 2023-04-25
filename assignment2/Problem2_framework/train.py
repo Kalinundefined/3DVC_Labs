@@ -13,7 +13,7 @@ def main():
 
     # Environment:
     device= 'cuda'
-    torch.manual_seed(42)
+    # torch.manual_seed(42)
     # Directories:
     cube_data_path= '/home/jialin/repo22/3dvc/3dvc_1/assignment2/Problem2/cube_dataset/clean'
     output_dir= '/home/jialin/repo22/3dvc/3dvc_1/assignment2/Problem2/output'
