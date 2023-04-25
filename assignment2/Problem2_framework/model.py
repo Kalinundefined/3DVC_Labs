@@ -54,7 +54,6 @@ class Img2PcdModel(nn.Module):
     def forward(self, x):  # shape = (B, 3, 256, 256)
         # TODO: Design your network computation process.
         # Example:
-        
         x = self.input_conv1(x)
         x = self.ReLU(x)
         x = self.input_conv2(x)

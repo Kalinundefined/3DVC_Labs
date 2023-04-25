@@ -13,13 +13,13 @@ def main():
 
     # Environment:
     device= 'cuda'
-
+    torch.manual_seed(42)
     # Directories:
     cube_data_path= '/home/jialin/repo22/3dvc/3dvc_1/assignment2/Problem2/cube_dataset/clean'
     output_dir= '/home/jialin/repo22/3dvc/3dvc_1/assignment2/Problem2/output'
 
     # Training hyper-parameters:
-    batch_size= 32
+    batch_size= 64
     epoch= 15
     learning_rate= 1e-5
 
@@ -41,7 +41,7 @@ def main():
 
     # Loss:
     # Example:
-    loss_fn = CDLoss()
+    loss_fn = HDLoss()
 
     # Optimizer:
     # Example:
@@ -75,8 +75,8 @@ def main():
 
         # forward
         pred = model(data_img)
-        for i in range(pred.size(0)):
-            ply_io.save_ply(f"/home/jialin/repo22/3dvc/3dvc_1/assignment2/Problem2_framework/output_pointcloud{batch_idx}_{i}.ply", pred[i])
+        if batch_idx == 1:
+            ply_io.save_ply(f"/home/jialin/repo22/3dvc/3dvc_1/assignment2/Problem2_framework/output/output_pointcloud{batch_idx}_{1}.ply", pred[0])
         # compute loss
         loss = loss_fn(pred, data_pcd)
         test_loss.append(loss.item())
